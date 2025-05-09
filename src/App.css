@@ -1,6 +1,6 @@
 /* 全局样式 */
 :root {
-  --primary-color: #7F5AF0; /* 主色调：现代紫色 */
+  --primary-color: #4F4A85; /* 主色调：深紫色 */
   --secondary-color: #2CB67D; /* 辅助色：清新绿色 */
   --background-color: #16161A; /* 背景色：深色背景 */
   --surface-color: #242629; /* 表面色：稍浅的深色 */
@@ -8,6 +8,7 @@
   --paragraph-color: #94A1B2; /* 段落色：柔和的灰色 */
   --accent-color: #FF8906; /* 强调色：橙色 */
   --danger-color: #EF4565; /* 危险色：红色 */
+  --header-color: #383351; /* 头部背景色 */
   --border-radius: 12px; /* 圆角半径 */
   --card-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); /* 卡片阴影 */
   --transition-speed: 0.3s; /* 过渡速度 */
@@ -27,6 +28,19 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background-color: var(--background-color);
+}
+
+/* Logo样式 */
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition-speed);
+}
+
+.logo:hover {
+  transform: scale(1.05);
 }
 
 /* 页面标题 */

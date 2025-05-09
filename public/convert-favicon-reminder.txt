@@ -1,0 +1,14 @@
+Important Reminder:
+
+For complete browser compatibility, you should convert the favicon.svg to favicon.ico.
+You can do this using online tools like:
+- https://convertio.co/svg-ico/
+- https://cloudconvert.com/svg-to-ico
+- https://realfavicongenerator.net/
+
+Or using command-line tools like ImageMagick:
+```
+convert -background none -density 256x256 favicon.svg -define icon:auto-resize=64,48,32,16 favicon.ico
+```
+
+This will ensure your favicon works in all browsers, including older ones that don't support SVG favicons.

@@ -1,5 +1,5 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { message } from 'antd';
+import React, { useState, useRef } from 'react';
+import { message, Layout } from 'antd';
 import {
   SoundOutlined,
   UploadOutlined,
@@ -12,6 +12,9 @@ import {
 // 导入Ant Design样式
 import 'antd/dist/reset.css';
 import './App.css';
+
+// 导入头部组件
+import Header from './components/common/Header';
 
 // 导入组件和服务
 import AudioEditor from './components/AudioEditor/AudioEditor';
@@ -118,8 +121,12 @@ function App() {
     return (bytes / (1024 * 1024)).toFixed(2) + ' MB';
   };
 
+  const { Content } = Layout;
+
   return (
-    <div className="app-container">
+    <Layout className="app-container">
+      <Header />
+      <Content style={{ padding: '24px', minHeight: 'calc(100vh - 64px)' }}>
       {isEditing && audioFile ? (
         // 编辑模式
         <div className="content-area fade-in">
@@ -244,7 +251,8 @@ function App() {
           </div>
         </div>
       )}
-    </div>
+      </Content>
+    </Layout>
   );
 }
 
