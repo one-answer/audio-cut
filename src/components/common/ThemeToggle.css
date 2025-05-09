@@ -1,0 +1,12 @@
+.theme-toggle {
+  display: flex;
+  align-items: center;
+}
+
+.theme-switch {
+  background-color: var(--primary-color);
+}
+
+.theme-switch.ant-switch-checked {
+  background-color: var(--primary-color);
+}

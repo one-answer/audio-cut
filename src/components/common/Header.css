@@ -1,0 +1,43 @@
+.app-header {
+  background-color: var(--header-color) !important;
+  padding: 0 24px;
+  transition: background-color var(--transition-speed);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.app-title {
+  margin: 0 !important;
+  color: var(--text-color) !important;
+  font-weight: 600 !important;
+  transition: color var(--transition-speed);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .app-header {
+    padding: 0 12px;
+  }
+  
+  .app-title {
+    font-size: 18px !important;
+  }
+}

@@ -13,6 +13,9 @@ import {
 import 'antd/dist/reset.css';
 import './App.css';
 
+// 导入主题上下文
+import { ThemeProvider } from './contexts/ThemeContext';
+
 // 导入头部组件
 import Header from './components/common/Header';
 
@@ -21,7 +24,7 @@ import AudioEditor from './components/AudioEditor/AudioEditor';
 import { AudioFile } from './types/audio';
 import { createAudioFileFromFile } from './services/fileHandling';
 
-function App() {
+const AppContent = () => {
   const [file, setFile] = useState<File | null>(null);
   const [isDragging, setIsDragging] = useState<boolean>(false);
   const [isEditing, setIsEditing] = useState<boolean>(false);
@@ -255,5 +258,13 @@ function App() {
     </Layout>
   );
 }
+
+const App = () => {
+  return (
+    <ThemeProvider>
+      <AppContent />
+    </ThemeProvider>
+  );
+};
 
 export default App;

@@ -1,17 +1,40 @@
 /* 全局样式 */
 :root {
+  /* 共享变量 */
   --primary-color: #4F4A85; /* 主色调：深紫色 */
   --secondary-color: #2CB67D; /* 辅助色：清新绿色 */
+  --accent-color: #FF8906; /* 强调色：橙色 */
+  --danger-color: #EF4565; /* 危险色：红色 */
+  --border-radius: 12px; /* 圆角半径 */
+  --transition-speed: 0.3s; /* 过渡速度 */
+
+  /* 暗色主题默认变量 */
   --background-color: #16161A; /* 背景色：深色背景 */
   --surface-color: #242629; /* 表面色：稍浅的深色 */
   --text-color: #FFFFFE; /* 文本色：几乎白色 */
   --paragraph-color: #94A1B2; /* 段落色：柔和的灰色 */
-  --accent-color: #FF8906; /* 强调色：橙色 */
-  --danger-color: #EF4565; /* 危险色：红色 */
   --header-color: #383351; /* 头部背景色 */
-  --border-radius: 12px; /* 圆角半径 */
   --card-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); /* 卡片阴影 */
-  --transition-speed: 0.3s; /* 过渡速度 */
+  --border-color: #333333; /* 边框颜色 */
+  --hover-color: rgba(79, 74, 133, 0.1); /* 悬停颜色 */
+  --input-bg: #2D2B55; /* 输入框背景 */
+  --scrollbar-thumb: #4F4A85; /* 滚动条滑块 */
+  --scrollbar-track: #242629; /* 滚动条轨道 */
+}
+
+/* 亮色主题变量 */
+body[data-theme='light'] {
+  --background-color: #FFFFFF; /* 背景色：白色 */
+  --surface-color: #F2F2F2; /* 表面色：浅灰色 */
+  --text-color: #333333; /* 文本色：深灰色 */
+  --paragraph-color: #666666; /* 段落色：灰色 */
+  --header-color: #F5F5F7; /* 头部背景色 */
+  --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* 卡片阴影 */
+  --border-color: #E0E0E0; /* 边框颜色 */
+  --hover-color: rgba(79, 74, 133, 0.05); /* 悬停颜色 */
+  --input-bg: #FFFFFF; /* 输入框背景 */
+  --scrollbar-thumb: #C0C0C0; /* 滚动条滑块 */
+  --scrollbar-track: #F2F2F2; /* 滚动条轨道 */
 }
 
 body {
@@ -21,6 +44,26 @@ body {
   background-color: var(--background-color);
   color: var(--text-color);
   line-height: 1.6;
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-color);
 }
 
 /* 应用容器 */
@@ -75,7 +118,8 @@ body {
   padding: 1.5rem;
   margin-bottom: 1.5rem;
   box-shadow: var(--card-shadow);
-  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed), background-color var(--transition-speed);
+  border: 1px solid var(--border-color);
 }
 
 .modern-card:hover {
@@ -106,11 +150,11 @@ body {
   cursor: pointer;
   transition: all var(--transition-speed);
   margin-bottom: 1.5rem;
-  background-color: rgba(127, 90, 240, 0.05);
+  background-color: var(--hover-color);
 }
 
 .upload-area:hover, .upload-area-active {
-  background-color: rgba(127, 90, 240, 0.1);
+  background-color: var(--hover-color);
   border-color: var(--secondary-color);
 }
 
@@ -133,10 +177,12 @@ body {
 
 /* 文件信息 */
 .file-info {
-  background-color: rgba(44, 182, 125, 0.1);
+  background-color: var(--hover-color);
   border-radius: var(--border-radius);
   padding: 1rem;
   margin-top: 1rem;
+  border: 1px solid var(--border-color);
+  transition: background-color var(--transition-speed), border-color var(--transition-speed);
 }
 
 .file-info-item {
