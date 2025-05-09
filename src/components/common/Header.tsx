@@ -1,7 +1,9 @@
 import React from 'react';
 import { Layout, Typography, Space } from 'antd';
+import Divider from 'antd/es/divider';
 import Logo from './Logo';
 import ThemeToggle from './ThemeToggle';
+import UserGuide from './UserGuide';
 import { useTheme } from '../../contexts/ThemeContext';
 import './Header.css';
 
@@ -26,6 +28,8 @@ const Header: React.FC = () => {
         </Space>
 
         <div className="header-actions">
+          <UserGuide />
+          <Divider type="vertical" style={{ margin: '0 8px', height: '20px' }} />
           <ThemeToggle />
         </div>
       </div>

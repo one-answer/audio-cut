@@ -27,6 +27,7 @@ import { formatTime } from '../../utils/audioHelpers';
 import { trimAudio, audioBufferToBlob, loadAudioFromUrl } from '../../services/audioProcessing';
 import { createAudioFileFromBlob, downloadAudioFile } from '../../services/fileHandling';
 import SaveDialog from './SaveDialog';
+import QuickGuide from './QuickGuide';
 // 这些组件暂时未使用，但保留导入以便将来使用
 // import WaveformDisplay from './WaveformDisplay';
 // import AudioControls from './AudioControls';
@@ -797,6 +798,9 @@ const AudioEditor: React.FC<AudioEditorProps> = ({ audioFile, onSave, onBack }) 
       >
         {audioFile ? (
           <>
+            {/* 操作指引 */}
+            <QuickGuide />
+
             {/* 波形显示区域 */}
             <div className="waveform-container">
               <div ref={waveformContainerRef} className="waveform" />
@@ -843,10 +847,45 @@ const AudioEditor: React.FC<AudioEditorProps> = ({ audioFile, onSave, onBack }) 
           <div className="no-audio-message">
             <UploadOutlined />
             <p>请上传音频文件以开始编辑</p>
+
+            <div className="guide-steps-container">
+              <h3>音频剪辑操作步骤</h3>
+              <ol className="guide-steps">
+                <li>
+                  <PlayCircleOutlined className="guide-icon" />
+                  <div className="guide-text">
+                    <strong>播放音频</strong>
+                    <p>上传音频后，点击播放按钮听取内容</p>
+                  </div>
+                </li>
+                <li>
+                  <HighlightOutlined className="guide-icon" />
+                  <div className="guide-text">
+                    <strong>设置剪辑点</strong>
+                    <p>在播放过程中，点击“设置开始点”和“设置结束点”标记需要保留的区域</p>
+                  </div>
+                </li>
+                <li>
+                  <PlayCircleOutlined className="guide-icon" />
+                  <div className="guide-text">
+                    <strong>预览选区</strong>
+                    <p>点击“预览”按钮试听选定的音频片段</p>
+                  </div>
+                </li>
+                <li>
+                  <ScissorOutlined className="guide-icon" />
+                  <div className="guide-text">
+                    <strong>剪切并保存</strong>
+                    <p>确认选区无误后，点击“剪切”按钮导出选定区域</p>
+                  </div>
+                </li>
+              </ol>
+            </div>
+
             <Button
               type="primary"
               icon={<UploadOutlined />}
-              style={{ marginTop: 16 }}
+              style={{ marginTop: 24 }}
               onClick={() => {
                 // 显示提示信息
                 message.info('请从主页上传音频文件');

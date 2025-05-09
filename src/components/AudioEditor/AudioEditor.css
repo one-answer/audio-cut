@@ -313,18 +313,104 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 300px;
-  background-color: #f7f9fc;
-  border-radius: 8px;
-  color: #8c8c8c;
+  min-height: 300px;
+  background-color: var(--surface-color);
+  border-radius: var(--border-radius);
+  color: var(--text-color);
   font-size: 16px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  box-shadow: var(--card-shadow);
+  padding: 32px 20px;
+  transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
 }
 
 .no-audio-message .anticon {
   font-size: 48px;
   margin-bottom: 16px;
-  color: #d9d9d9;
+  color: var(--primary-color);
+}
+
+/* 操作指引步骤 */
+.guide-steps-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 24px 0;
+  text-align: left;
+}
+
+.guide-steps-container h3 {
+  text-align: center;
+  margin-bottom: 24px;
+  font-size: 18px;
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+.guide-steps {
+  list-style: none;
+  counter-reset: step-counter;
+  padding: 0;
+  margin: 0;
+}
+
+.guide-steps li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 24px;
+  padding: 16px;
+  border-radius: var(--border-radius);
+  background-color: var(--hover-color);
+  border: 1px solid var(--border-color);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color var(--transition-speed);
+  position: relative;
+}
+
+.guide-steps li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.guide-steps li::before {
+  counter-increment: step-counter;
+  content: counter(step-counter);
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 28px;
+  height: 28px;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.guide-icon {
+  font-size: 24px;
+  color: var(--primary-color);
+  margin-right: 16px;
+  margin-top: 4px;
+}
+
+.guide-text {
+  flex: 1;
+}
+
+.guide-text strong {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 16px;
+  color: var(--text-color);
+}
+
+.guide-text p {
+  margin: 0;
+  color: var(--paragraph-color);
+  font-size: 14px;
+  line-height: 1.5;
 }
 
 /* 缩放滑块 */
