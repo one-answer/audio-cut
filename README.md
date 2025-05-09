@@ -1,4 +1,6 @@
-# 使用 Create React App 开始
+# Audio Cut - 音频剪辑工具
+
+一个基于Web的音频剪辑工具，使用React和TypeScript开发，允许用户上传、编辑和处理音频文件。
 
 本项目使用 [Create React App](https://github.com/facebook/create-react-app) 引导创建。
 
@@ -44,3 +46,61 @@
 你可以在 [Create React App 文档](https://facebook.github.io/create-react-app/docs/getting-started)中了解更多信息。
 
 要学习 React，请查看 [React 文档](https://reactjs.org/)。
+
+## 网站功能
+
+### 主要功能
+
+- **音频上传**: 支持上传各种格式的音频文件
+- **波形可视化**: 使用WaveSurfer.js展示音频波形，直观地展示音频内容
+- **音频剪辑**: 支持选择音频片段进行剪切
+- **播放控制**: 包含播放、暂停、停止和跳转功能
+- **音量调节**: 可调节音频播放音量
+- **波形缩放**: 支持缩放波形显示以查看更多细节
+
+### 技术特点
+
+- 使用WaveSurfer.js实现音频波形可视化
+- 基于Web Audio API进行音频处理
+- 响应式设计，适应不同屏幕尺寸
+- 使用Ant Design组件库构建用户界面
+
+## 源码结构
+
+```
+src/
+├── components/           # 组件目录
+│   ├── AudioEditor/       # 音频编辑器相关组件
+│   │   ├── AudioControls.tsx  # 音频控制组件
+│   │   ├── AudioEditor.tsx    # 主编辑器组件
+│   │   └── WaveformDisplay.tsx # 波形显示组件
+│   └── common/            # 通用组件
+├── hooks/                # 自定义React Hooks
+│   ├── useAudioPlayer.ts   # 音频播放器Hook
+│   └── useWaveform.ts      # 波形处理Hook
+├── services/             # 服务层
+│   ├── audioProcessing.ts  # 音频处理服务
+│   └── waveformRenderer.ts # 波形渲染服务
+├── types/                # TypeScript类型定义
+│   ├── audio.ts           # 音频相关类型
+│   └── wavesurfer.d.ts     # WaveSurfer类型声明
+├── utils/                # 工具函数
+│   └── audioHelpers.ts     # 音频处理辅助函数
+├── App.tsx               # 应用程序主组件
+└── index.tsx             # 应用程序入口点
+```
+
+## 技术栈
+
+- **前端框架**: React 19
+- **编程语言**: TypeScript
+- **UI库**: Ant Design 5.x
+- **波形可视化**: WaveSurfer.js 4.x
+- **构建工具**: Create React App
+- **音频处理**: Web Audio API
+
+## 开发注意事项
+
+- 在开发过程中，我们已经禁用了ESLint检查并设置CI=false以加快构建过程
+- WaveSurfer.js的初始化需要特别注意，确保在加载音频前实例已完全初始化
+- 对于大文件的处理，建议使用Web Worker来避免阻塞主线程
