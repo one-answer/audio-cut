@@ -396,7 +396,7 @@ export const audioBufferToBlob = async (
         };
 
         console.log('Preparing channel data...');
-        const channels = [];
+        const channels: Float32Array[] = [];
         for (let i = 0; i < renderedBuffer.numberOfChannels; i++) {
           channels.push(renderedBuffer.getChannelData(i));
         }

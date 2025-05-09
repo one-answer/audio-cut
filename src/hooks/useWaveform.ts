@@ -345,7 +345,7 @@ export const useWaveform = ({
           console.log('Searching for RegionsPlugin in plugins array');
 
           // 尝试查找任何可能的区域插件
-          let regionsPlugin = null;
+          let regionsPlugin: any = null;
 
           // 首先尝试按构造函数名查找
           regionsPlugin = wavesurfer.plugins.find(

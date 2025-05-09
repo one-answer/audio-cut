@@ -345,7 +345,7 @@ export const generateWaveformData = (
 ): number[] => {
   const channelData = audioBuffer.getChannelData(0);
   const blockSize = Math.floor(channelData.length / numberOfPoints);
-  const waveform = [];
+  const waveform: number[] = [];
 
   for (let i = 0; i < numberOfPoints; i++) {
     const start = i * blockSize;

@@ -293,7 +293,7 @@ const AudioEditor: React.FC<AudioEditorProps> = ({ audioFile, onSave, onBack }) 
       console.log('wavesurfer.backend:', wavesurfer.backend);
 
       // 尝试不同的方法获取音频数据
-      let audioData = null;
+      let audioData: AudioBuffer | null = null;
 
       // 方法 1: 尝试使用 getDecodedData
       if (typeof wavesurfer.getDecodedData === 'function') {
