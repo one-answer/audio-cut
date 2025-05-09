@@ -1,0 +1,8 @@
+This is a placeholder for the og-image.png file.
+
+Please convert the og-image.svg to og-image.png using an online converter or a tool like ImageMagick.
+
+Recommended command:
+convert -background none -density 300 og-image.svg og-image.png
+
+The image should be 1200x630 pixels for optimal display on social media platforms.

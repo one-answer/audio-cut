@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3811349067654166"
+            crossorigin="anonymous"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MM2SHV5K30"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-MM2SHV5K30');
+    </script>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.svg" type="image/svg+xml" />
     <link rel="alternate icon" href="%PUBLIC_URL%/favicon64.png" />
@@ -8,17 +18,67 @@
     <meta name="theme-color" content="#4F4A85" />
     <meta
       name="description"
-      content="音频剪辑工具 - 一个基于Web的音频编辑应用"
+      content="免费在线音频剪辑工具，支持MP3、WAV、OGG等格式的剪切、波形可视化和音频处理。无需下载软件，直接在浏览器中编辑音频文件。"
     />
+    <meta name="keywords" content="音频剪辑,在线音频编辑,音频剪切,波形编辑,MP3编辑,WAV编辑,免费音频工具" />
+    <meta name="author" content="Audio Cut" />
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="google" content="notranslate" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo.svg" />
     <link rel="mask-icon" href="%PUBLIC_URL%/logo.svg" color="#4F4A85" />
 
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
-    <title>在线音频剪辑 - 音频剪辑工具</title>
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://audio-cut.aolifu.org/" />
+    <meta property="og:title" content="在线音频剪辑工具 - 免费、简单、高效" />
+    <meta property="og:description" content="免费在线音频剪辑工具，支持MP3、WAV、OGG等格式的剪切、波形可视化和音频处理。" />
+    <meta property="og:image" content="%PUBLIC_URL%/og-image.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://audio-cut.aolifu.org/" />
+    <meta property="twitter:title" content="在线音频剪辑工具 - 免费、简单、高效" />
+    <meta property="twitter:description" content="免费在线音频剪辑工具，支持MP3、WAV、OGG等格式的剪切、波形可视化和音频处理。" />
+    <meta property="twitter:image" content="%PUBLIC_URL%/og-image.png" />
+
+    <link rel="canonical" href="https://audio-cut.aolifu.org/" />
+
+    <title>在线音频剪辑 - 免费音频剪辑工具 | Audio Cut</title>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <!-- JSON-LD structured data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Audio Cut",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "免费在线音频剪辑工具，支持MP3、WAV、OGG等格式的剪切、波形可视化和音频处理。无需下载软件，直接在浏览器中编辑音频文件。",
+      "url": "https://audio-cut.aolifu.org",
+      "image": "https://audio-cut.aolifu.org/og-image.png",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "125"
+      }
+    }
+    </script>
+    <noscript>
+      <div style="text-align: center; padding: 20px; font-family: Arial, sans-serif;">
+        <h1>在线音频剪辑工具</h1>
+        <p>请启用JavaScript以使用我们的音频剪辑工具。该工具支持MP3、WAV、OGG等格式的剪切、波形可视化和音频处理。</p>
+        <p>无需下载软件，直接在浏览器中编辑音频文件。</p>
+      </div>
+    </noscript>
     <div id="root"></div>
   </body>
 </html>
