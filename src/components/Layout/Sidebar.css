@@ -1,0 +1,14 @@
+.app-sidebar {
+  box-shadow: 2px 0 8px 0 rgba(29, 35, 41, 0.05);
+}
+
+.sidebar-logo {
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #001529;
+}
